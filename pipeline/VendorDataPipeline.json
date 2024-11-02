@@ -1,0 +1,7 @@
+{
+	"name": "VendorDataPipeline",
+	"properties": {
+		"description": "This Pipeline Receives from Google, BingSearch, Yahoo Search, Bravo Searches etc.",
+		"annotations": []
+	}
+}
