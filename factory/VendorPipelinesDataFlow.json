@@ -1,0 +1,9 @@
+{
+	"name": "VendorPipelinesDataFlow",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "153865e2-97f6-4680-a35a-b91c8ba4c716",
+		"tenantId": "9042f693-6399-44bc-bc9a-2208c3c4b797"
+	}
+}
