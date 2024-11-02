@@ -1,0 +1,33 @@
+{
+	"name": "USAVendorData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "USAVendorPizzaDataStagingStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "SalesReport"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(dataset().FileName,\n    substring(convertFromUtc(utcNow(), 'Eastern Standard Time'), 0,10),\n    '.csv'\n     )",
+					"type": "Expression"
+				},
+				"folderPath": "RawPizzaStorage",
+				"fileSystem": "usavendorpizzacontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": null
+		},
+		"schema": []
+	}
+}
