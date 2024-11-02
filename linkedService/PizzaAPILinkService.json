@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/iQueryData/VendorPipelines/raw/refs/heads/master/pizza_sales.csv",
+			"url": "https://github.com/iQueryData/VendorPipelines/raw/refs/heads/vendornov2024/pizza_sales_data_20000_samples.csv",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
