@@ -57,7 +57,10 @@
 				"outputs": [
 					{
 						"referenceName": "USAVendorData",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": "PizzaSalesReport"
+						}
 					}
 				]
 			}
