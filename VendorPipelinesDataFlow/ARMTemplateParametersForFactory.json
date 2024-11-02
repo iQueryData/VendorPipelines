@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "VendorPipelinesDataFlow"
+		},
+		"USAVendorPizzaDataStagingStorage_accountKey": {
+			"value": ""
+		},
+		"PizzaAPILinkService_properties_typeProperties_url": {
+			"value": "https://github.com/iQueryData/VendorPipelines/raw/refs/heads/vendornov2024/pizza_sales_data_20000_samples.csv"
+		},
+		"USAVendorPizzaDataStagingStorage_properties_typeProperties_url": {
+			"value": "https://pizzavendorsdataus.dfs.core.windows.net/"
+		}
+	}
+}
