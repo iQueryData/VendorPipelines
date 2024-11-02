@@ -2,19 +2,21 @@
 	"name": "USAVendorData",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "PizzaAPILinkService",
+			"referenceName": "USAVendorPizzaDataStagingStorage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "AzureBlobFSLocation",
+				"folderPath": "RawPizzaStorage",
+				"fileSystem": "usavendorpizzacontainer"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"firstRowAsHeader": false,
+			"quoteChar": null
 		},
 		"schema": []
 	}
