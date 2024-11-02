@@ -14,7 +14,7 @@
 					"value": "@concat(\n    'PizzaUSAVendor',\n    convertFromUtc(utcNow(), 'Eastern Standard Time'),\n    '.csv'\n     )",
 					"type": "Expression"
 				},
-				"folderPath": "BronzePizzaStroage",
+				"folderPath": "RawPizzaStorage",
 				"fileSystem": "usavendorpizzacontainer"
 			},
 			"columnDelimiter": ",",
