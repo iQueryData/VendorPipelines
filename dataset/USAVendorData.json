@@ -10,7 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "RawPizzaStorage",
+				"fileName": {
+					"value": "@concat(\n    'PizzaUSAVendor',\n    convertFromUtc(utcNow(), 'Eastern Standard Time'),\n    '.csv'\n     )",
+					"type": "Expression"
+				},
+				"folderPath": "BronzePizzaStroage",
 				"fileSystem": "usavendorpizzacontainer"
 			},
 			"columnDelimiter": ",",
