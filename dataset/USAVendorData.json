@@ -16,12 +16,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@concat(dataset().FileName,\n    substring(convertFromUtc(utcNow(), 'Eastern Standard Time'), 0,10),\n    '.csv'\n     )",
-					"type": "Expression"
-				},
-				"folderPath": "RawPizzaStorage",
-				"fileSystem": "usavendorpizzacontainer"
+				"folderPath": "BronzeFilesUSA",
+				"fileSystem": "pizzadatastore"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
