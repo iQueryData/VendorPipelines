@@ -1,0 +1,23 @@
+{
+	"name": "PizzaRawFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PizzaRawFilesLinked",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "BronzeFilesUSA",
+				"fileSystem": "pizzadatastore"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
