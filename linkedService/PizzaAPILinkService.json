@@ -2,6 +2,12 @@
 	"name": "PizzaAPILinkService",
 	"properties": {
 		"description": "From Papa Pizzaria API Service Link for Data Source ",
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "Fname"
+			}
+		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
