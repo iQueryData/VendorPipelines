@@ -1,0 +1,22 @@
+{
+	"name": "http_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_api_github",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "iQueryData/AZProduct-Azure-Data-Project/tree/master/source_files/"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
