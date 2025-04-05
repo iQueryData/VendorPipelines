@@ -1,0 +1,13 @@
+{
+	"name": "AVP_on_cloud_sql_db",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_avp_on_cloud",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

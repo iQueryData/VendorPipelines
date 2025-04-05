@@ -1,0 +1,17 @@
+{
+	"name": "LS_avp_on_cloud",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "primevideo.database.windows.net",
+			"database": "apv_server",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sql",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDc5RUQzOUZFLTdGMUYtNEQ2Ny1CQTlBLTc1MzgwQUQyMjg1Q18yMmYzNzA0Mi1lMGUyLTRhZWUtYmJlNS1kMjhiODNiYzdkMTEiDQp9"
+		}
+	}
+}
