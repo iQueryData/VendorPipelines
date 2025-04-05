@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "avp-project-datapiplines"
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"FtpServer1_password": {
+			"value": ""
+		},
+		"LS_avp_on_cloud_password": {
+			"value": ""
+		},
+		"LS_prime_video_datastore_accountKey": {
+			"value": ""
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "sample"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "sql"
+		},
+		"FtpServer1_properties_typeProperties_host": {
+			"value": "127.0.0.1"
+		},
+		"FtpServer1_properties_typeProperties_userName": {
+			"value": "sql"
+		},
+		"LS_avp_on_cloud_properties_typeProperties_server": {
+			"value": "primevideo.database.windows.net"
+		},
+		"LS_avp_on_cloud_properties_typeProperties_database": {
+			"value": "apv_server"
+		},
+		"LS_avp_on_cloud_properties_typeProperties_userName": {
+			"value": "sql"
+		},
+		"LS_prime_video_datastore_properties_typeProperties_url": {
+			"value": "https://datalakestoreforavp.dfs.core.windows.net/"
+		}
+	}
+}

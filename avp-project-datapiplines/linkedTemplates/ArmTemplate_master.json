@@ -1,0 +1,126 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "avp-project-datapiplines"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"FtpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FtpServer1'"
+		},
+		"LS_avp_on_cloud_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_avp_on_cloud'"
+		},
+		"LS_prime_video_datastore_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_prime_video_datastore'"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sample"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "sql"
+		},
+		"FtpServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "127.0.0.1"
+		},
+		"FtpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sql"
+		},
+		"LS_avp_on_cloud_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "primevideo.database.windows.net"
+		},
+		"LS_avp_on_cloud_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "apv_server"
+		},
+		"LS_avp_on_cloud_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sql"
+		},
+		"LS_prime_video_datastore_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakestoreforavp.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "avp-project-datapiplines_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"FtpServer1_password": {
+						"value": "[parameters('FtpServer1_password')]"
+					},
+					"LS_avp_on_cloud_password": {
+						"value": "[parameters('LS_avp_on_cloud_password')]"
+					},
+					"LS_prime_video_datastore_accountKey": {
+						"value": "[parameters('LS_prime_video_datastore_accountKey')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
+					},
+					"FtpServer1_properties_typeProperties_host": {
+						"value": "[parameters('FtpServer1_properties_typeProperties_host')]"
+					},
+					"FtpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('FtpServer1_properties_typeProperties_userName')]"
+					},
+					"LS_avp_on_cloud_properties_typeProperties_server": {
+						"value": "[parameters('LS_avp_on_cloud_properties_typeProperties_server')]"
+					},
+					"LS_avp_on_cloud_properties_typeProperties_database": {
+						"value": "[parameters('LS_avp_on_cloud_properties_typeProperties_database')]"
+					},
+					"LS_avp_on_cloud_properties_typeProperties_userName": {
+						"value": "[parameters('LS_avp_on_cloud_properties_typeProperties_userName')]"
+					},
+					"LS_prime_video_datastore_properties_typeProperties_url": {
+						"value": "[parameters('LS_prime_video_datastore_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
