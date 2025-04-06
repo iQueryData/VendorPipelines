@@ -1,0 +1,139 @@
+{
+	"name": "MediaCostData_copy1",
+	"properties": {
+		"description": "Reporting Data from Rakuten Agency",
+		"activities": [
+			{
+				"name": "Get FileNames",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Get FileNames",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get FileNames').output.childItems",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Get File Details",
+							"type": "GetMetadata",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "DS_Delimited",
+									"type": "DatasetReference",
+									"parameters": {
+										"file_name_param": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								},
+								"fieldList": [
+									"itemName",
+									"lastModified"
+								],
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							}
+						},
+						{
+							"name": "Set Table_Details",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Get File Details",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "pipelineReturnValue",
+								"value": [
+									{
+										"key": "file_name",
+										"value": {
+											"type": "Expression",
+											"content": "@activity('Get File Details').output.itemName"
+										}
+									},
+									{
+										"key": "file_process_time",
+										"value": {
+											"type": "Expression",
+											"content": "@activity('Get File Details').output.lastModified"
+										}
+									}
+								],
+								"setSystemVariable": true
+							}
+						}
+					]
+				}
+			}
+		],
+		"annotations": [
+			"Rakuten_MediaCost"
+		],
+		"lastPublishTime": "2025-04-06T10:19:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "AccelDataProject",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1c5e7e46-1300-4d90-b0aa-c2b92cd4dde2",
+		"tenantId": "70e8b6f8-06f0-4e71-bfcc-376530388fbb"
+	}
+}

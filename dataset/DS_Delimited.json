@@ -1,0 +1,58 @@
+{
+	"name": "DS_Delimited",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"file_name_param": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_name_param",
+					"type": "Expression"
+				},
+				"folderPath": "inbound",
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "TYPE",
+				"type": "String"
+			},
+			{
+				"name": "KIND",
+				"type": "String"
+			},
+			{
+				"name": "RESOURCE GROUP",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION",
+				"type": "String"
+			},
+			{
+				"name": "SUBSCRIPTION",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

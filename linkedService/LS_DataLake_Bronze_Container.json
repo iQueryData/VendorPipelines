@@ -1,0 +1,15 @@
+{
+	"name": "LS_DataLake_Bronze_Container",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Connect to DataLake Bronze Container ( general container ) ",
+		"annotations": [
+			"LS_ADLS_Bronze_AccelDataProject"
+		],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://devprojectavp.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQyMjgwQzdGLTkxNkEtNDU2RC1CMkIxLUJEMDlEQjM2QzU1RV81ZDlkZTNjOS1mOGJlLTRjMGQtOTJmMS01NjNiZGQ4NzljNzUiDQp9"
+		}
+	}
+}
