@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"file_name_param": {
+			"file_to_pull": {
 				"type": "string"
 			}
 		},
@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().file_name_param",
+					"value": "@dataset().file_to_pull",
 					"type": "Expression"
 				},
 				"folderPath": "inbound",
